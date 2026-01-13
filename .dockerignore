@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.*
+*.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Test files
+backend/test_*.py
+**/test_*.py
+
+# Data (will be mounted as volume)
+data/*.json
+!data/.gitkeep
+
+# Certificates (will be mounted as volume)
+certificates/*
+
+# Deployment scripts
+deploy.sh
+*.sh
+*.md
+!docker/
+

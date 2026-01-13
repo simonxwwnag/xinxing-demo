@@ -39,4 +39,8 @@ class Config:
     DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "data")
     PRODUCTS_FILE = os.path.join(DATA_DIR, "products.json")
     PROJECTS_FILE = os.path.join(DATA_DIR, "projects.json")
+    
+    # 证书文件目录（如果未配置，使用项目目录下的certificates目录）
+    _default_cert_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "certificates")
+    CERTIFICATE_DIR = os.getenv("CERTIFICATE_DIR", _default_cert_dir)
 

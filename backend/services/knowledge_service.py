@@ -1,5 +1,9 @@
 from typing import List, Dict, Any, Optional
-from volcengine.viking_knowledgebase import VikingKnowledgeBaseService
+try:
+    from volcengine.viking_knowledgebase import VikingKnowledgeBaseService
+except ImportError:
+    VikingKnowledgeBaseService = None
+    print("Warning: volcengine.viking_knowledgebase not found, some features may be unavailable")
 from models.schemas import SpecSource, SupplierInfo
 from utils.config import Config
 import os
@@ -205,6 +209,9 @@ class KnowledgeService:
     """知识库服务"""
     
     def __init__(self):
+        if VikingKnowledgeBaseService is None:
+            raise ImportError("volcengine.viking_knowledgebase module is not available. Please install the correct volcengine package.")
+        
         # 增加超时设置，知识库API可能需要较长时间
         # connection_timeout: 连接超时（秒）
         # socket_timeout: 读取超时（秒），设置为120秒以支持AI重排序等耗时操作

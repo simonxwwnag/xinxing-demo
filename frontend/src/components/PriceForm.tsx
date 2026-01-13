@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Product } from '../types';
-import { updateProduct, completeInquiry } from '../services/api';
+import { updateProduct } from '../services/api';
 
 interface PriceFormProps {
   product: Product;

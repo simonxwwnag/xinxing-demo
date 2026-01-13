@@ -5,11 +5,12 @@ from typing import List, Optional
 from urllib.parse import quote, unquote
 import os
 import glob
+from utils.config import Config
 
 router = APIRouter()
 
-# 证书文件目录
-CERTIFICATE_DIR = "/Users/simon/Downloads/部分人员证书"
+# 证书文件目录（从配置文件读取）
+CERTIFICATE_DIR = Config.CERTIFICATE_DIR
 
 class CertificateFile(BaseModel):
     """证书文件信息"""
